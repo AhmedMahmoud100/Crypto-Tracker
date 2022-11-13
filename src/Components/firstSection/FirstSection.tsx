@@ -1,4 +1,4 @@
-import './MainSection.scss'
+import './FirstSection.scss'
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import { CoinList } from '../../config/Api'
@@ -6,7 +6,7 @@ import { FormatCurrency } from '../../utilities/FormatCurrency'
 import { currencyContext } from '../../context/CurrencyContext'
 import { useContext } from 'react'
 
-export default function MainSection() {
+export default function FirstSection() {
 
   const {currency} = useContext(currencyContext)
   const { data } = useQuery(['coin-list',currency], () => {
@@ -22,9 +22,9 @@ export default function MainSection() {
   )
 
   return (
-    <section className="mainSection">
+    <section className="firstSection">
       <div className="container">
-        <header className="mainSectionHeader">
+        <header className="firstSectionHeader">
           <h1>Crypto Hunter</h1>
           <p>Get all The Info Regardeing Your Favorite Crypto Currency</p>
         </header>

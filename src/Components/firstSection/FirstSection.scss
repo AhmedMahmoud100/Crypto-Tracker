@@ -1,0 +1,87 @@
+@keyframes infite {
+    to {
+        transform: translateX(-1800%);
+    }
+}
+
+.firstSection {
+    background-image: url('/banner2.jpg');
+    background-size: cover;
+    width: 100%;
+    color: white;
+    padding-bottom: 30px;
+
+    .firstSectionHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+
+        h1 {
+            font-size: 55px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 12px;
+            opacity: 0.5;
+        }
+    }
+
+    .currencyData {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            list-style: none;
+            width: 20%;
+            align-items: center;
+            flex-shrink: 0;
+            animation: infite 20s infinite linear alternate;
+
+            li {
+                font-size: 15px;
+
+                &:nth-child(2) {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+
+              img {
+                width: 70px;
+
+            }
+        }
+    }
+
+}
+
+@media(max-width:500px) {
+    .firstSection {
+        .firstSectionHeader {
+            h1 {
+                font-size: 40px;
+            }
+
+        }
+
+        .currencyData {
+            ul {
+                width: 120px;
+            }
+        }
+    }
+
+    @keyframes infite {
+        to {
+            transform: translateX(-2000%);
+        }
+    }
+
+}
