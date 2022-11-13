@@ -1,0 +1,65 @@
+.mainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        color: gold;
+        font-size: 20px;
+    }
+
+    .currency {
+        background-color: black;
+        color: white;
+        border: 2px solid #433535;
+        width: fit-content;
+        padding: 5px;
+        display: flex;
+        flex-direction: space-between;
+        align-items: center;
+        gap: 10px;
+        height: 20px;
+        font-size: 15px;
+        position: relative;
+        border-radius: 10px;
+
+        &:hover {
+            border-color: white;
+        }
+
+        .downIcon {
+            cursor: pointer;
+        }
+
+        h4 {
+            padding-left: 5px;
+        }
+
+        .currencyList {
+
+            list-style: none;
+            position: absolute;
+            width: calc(100% - 5px);
+            background-color: #8e8a8a;
+            top: 4px;
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+
+            &.disable {
+                display: none;
+            }
+
+            li {
+
+                cursor: pointer;
+                padding: 10px;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}
