@@ -42,7 +42,7 @@
             width: 20%;
             align-items: center;
             flex-shrink: 0;
-            animation: infite 10s infinite linear  both;
+            animation: infite 10s infinite linear both;
 
             li {
                 font-size: 14px;
@@ -50,15 +50,15 @@
                 &:nth-child(2) {
                     display: flex;
                     gap: 5px;
-                    
                 }
+
                 &:last-child {
                     font-weight: bold;
                     font-size: 17px;
                 }
             }
 
-              img {
+            img {
                 width: 70px;
 
             }
@@ -70,7 +70,8 @@
 @media(max-width:500px) {
     .firstSection {
         .firstSectionHeader {
-            padding: 30px 0 ;
+            padding: 30px 0;
+
             h1 {
                 font-size: 38px;
             }

@@ -2,7 +2,8 @@
     flex: 3;
     padding-left: 30px;
     border-left: 2px solid rgb(87 82 82);
-    .buttons{
+
+    .buttons {
         display: flex;
         gap: 20px;
         padding: 20px;
@@ -11,15 +12,15 @@
             padding: 10px 80px;
             font-size: 16px;
             background-color: #14161a;
-            color: white ;
+            color: white;
             border: 2px solid rgb(87 82 82);
-           
-            &:hover{
+
+            &:hover {
                 background-color: gold;
                 color: black;
                 cursor: pointer;
                 font-weight: bold;
-                border: none;  
+                border: none;
             }
 
             &.active {
@@ -31,7 +32,8 @@
         }
     }
 }
-@media (max-width:1000px){
+
+@media (max-width:1000px) {
     .coinChart {
         border-top: 5px solid rgb(30, 30, 30);
         border-left: none;
@@ -39,18 +41,20 @@
         padding-top: 10px;
 
         .buttons {
-          button {
-            flex: 1;
-            height: 40px;
-            padding: 0;
-          }
+            button {
+                flex: 1;
+                height: 40px;
+                padding: 0;
+            }
         }
     }
 }
-@media (max-width:650px){
+
+@media (max-width:650px) {
     .coinChart {
         .buttons {
             gap: 10px;
+
             button {
                 height: 30px;
                 font-size: 12px;

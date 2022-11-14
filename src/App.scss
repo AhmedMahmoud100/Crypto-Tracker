@@ -1,6 +1,6 @@
  .App {
-     margin: 0 ;
-     padding: 0 ;
+     margin: 0;
+     padding: 0;
      box-sizing: border-box;
      scroll-behavior: smooth;
      font-family: 'Montserrat', sans-serif;
@@ -41,19 +41,15 @@
              width: 1570px;
          }
      }
-     .plus {
-        color: green;
-        font-weight: bold;
-    }
 
-    .minus {
-        color: red;
-        font-weight: bold;
-    }
-    .loading {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        border: 10px solid gold;
-    }
+     .plus {
+         color: green;
+         font-weight: bold;
+     }
+
+     .minus {
+         color: red;
+         font-weight: bold;
+     }
+
  }

@@ -5,8 +5,7 @@ import { currencyContext } from '../../context/CurrencyContext';
 import { Link } from 'react-router-dom';
 export default function Header() {
   const [currenyList, setcurrenyList] = useState(false)
-  const {currency,setcurrency}= useContext(currencyContext)
-  
+  const { currency, setcurrency } = useContext(currencyContext)
 
   function HandleCurrency(Currency: string) {
     setcurrenyList(false)

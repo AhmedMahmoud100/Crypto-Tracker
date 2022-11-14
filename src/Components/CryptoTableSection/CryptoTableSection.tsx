@@ -8,6 +8,8 @@ import { useContext, useEffect, useState } from "react";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
+import { coinType } from '../../Types/CoinType';
 
 export default function CryptoTableSection() {
   const { currency } = useContext(currencyContext);
@@ -16,7 +18,7 @@ export default function CryptoTableSection() {
   const [SearchValue, setSearchValue] = useState<any>('')
   const navigate = useNavigate();
 
-  const { data } = useQuery(["coin-table", currency], () => {
+  const { data, isLoading } = useQuery(["coin-table", currency], () => {
     return axios.get(CoinList(currency));
   });
 
@@ -40,7 +42,7 @@ export default function CryptoTableSection() {
     CurrencyDataHandler(number)
   }
 
-  function PageSlider(e: any) {
+  function PageSlider(e : any) {
     if (e.target.dataset.dir === "right" && pageNumber < 10) {
       let number = pageNumber + 1
       CurrencyDataHandler(number)
@@ -53,23 +55,27 @@ export default function CryptoTableSection() {
 
   useEffect(() => {
     if (data && SearchValue != '') {
-      let searchResult = data!.data.filter((coin: any) => {
-        if (coin.name.toLowerCase().includes(SearchValue.toLowerCase())) {
+      let searchResult = data!.data.filter((coin: coinType) => {
+        if (coin.name!.toLowerCase().includes(SearchValue.toLowerCase())) {
           return coin
         }
       })
       setcurrencyData([...searchResult])
     }
-    else if (data && SearchValue == ''){
+    else if (data && SearchValue == '') {
       CurrencyDataHandler(pageNumber)
     }
   }, [SearchValue])
 
-  function HandleNavigation(coin: any) {
+  function HandleNavigation(coin: coinType) {
     navigate(`/${coin.id}`, { state: { id: coin.id } });
   }
 
+  if (isLoading) {
+    return <div className='loading table'><Loading /></div>
+  }
   return (
+
     <section className="cryptoTableSection container">
       <h2>Cryptocurrency Prices by Market Cap </h2>
       <input onChange={(e) => setSearchValue(e.target.value)} value={SearchValue}
@@ -77,6 +83,7 @@ export default function CryptoTableSection() {
         placeholder="Search For a Crypto Currency"
         className="searchinput"
       />
+
       <table className="currencyTable">
         <thead>
           <tr className="tableHead">
@@ -87,8 +94,9 @@ export default function CryptoTableSection() {
           </tr>
         </thead>
         <tbody>
-          {currencyData.map((coin: any) => {
-            let profit = coin.price_change_percentage_24h >= 0;
+
+          {currencyData.map((coin: coinType) => {
+            let profit = coin.price_change_percentage_24h! >= 0;
             return (
               <tr key={coin.id} onClick={() => HandleNavigation(coin)}>
                 <td>
@@ -98,19 +106,20 @@ export default function CryptoTableSection() {
                     <span>{coin.name}</span>
                   </div>
                 </td>
-                <td>{FormatCurrency(coin.current_price, currency)}</td>
+                <td>{FormatCurrency(coin.current_price!, currency)}</td>
                 <td>
                   <span className={profit ? "plus" : "minus"}>
                     {profit && "+"}
-                    {coin.price_change_percentage_24h.toFixed(2)} %
+                    {coin.price_change_percentage_24h!.toFixed(2)} %
                   </span>
                 </td>
-                <td>{FormatCurrency(coin.market_cap, currency)}</td>
+                <td>{FormatCurrency(coin.market_cap!, currency)}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
+
       {SearchValue == '' && <div className="tablefooter">
         <ChevronLeftIcon onClick={PageSlider} data-dir="left" />
         <div onClick={CoinsPage} data-number="1">1</div>
@@ -122,6 +131,7 @@ export default function CryptoTableSection() {
         <div onClick={CoinsPage} data-number="10">10</div>
         <KeyboardArrowRightIcon onClick={PageSlider} data-dir="right" />
       </div>}
+      
     </section>
   );
 }

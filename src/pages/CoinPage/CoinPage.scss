@@ -1,16 +1,17 @@
-.coinPage{
+.coinPage {
     display: flex;
     padding: 40px 20px;
     gap: 20px;
     border-top: 5px solid rgb(30, 30, 30);
     height: calc(100vh - 57.2px);
-   
+
 }
-@media (max-width:1000px){
+
+@media (max-width:1000px) {
     .coinPage {
         flex-direction: column;
         gap: 30px;
         height: auto;
-        
+
     }
 }

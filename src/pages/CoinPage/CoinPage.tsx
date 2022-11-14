@@ -5,8 +5,8 @@ import './CoinPage.scss'
 export default function CoinPage() {
   return (
     <div className='coinPage'>
-        <CoinInfo />
-        <CoinChart />
+      <CoinInfo />
+      <CoinChart />
     </div>
   )
 }

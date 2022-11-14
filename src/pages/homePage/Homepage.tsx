@@ -4,8 +4,8 @@ import FirstSection from '../../Components/firstSection/FirstSection'
 export default function Homepage() {
   return (
     <div>
-       <FirstSection />
-       <CryptoTableSection />
+      <FirstSection />
+      <CryptoTableSection />
     </div>
   )
 }
