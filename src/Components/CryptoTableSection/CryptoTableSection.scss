@@ -15,61 +15,173 @@
     .searchinput {
         width: calc(100% - 10px);
         height: 30px;
-        outline: none;
         background-color: #14161a;
-        border: 1px solid rgb(155, 155, 155);
+        border: 1px solid rgb(87 82 82);
         color: white;
         font-size: 16px;
         padding-left: 10px;
+        border-radius: 5px;
     }
 
     .currencyTable {
         width: 100%;
         border-spacing: 0;
 
-        .tableHead th {
-            text-align: start;
-            padding: 10px;
-            background-color: gold;
-            color: black;
-            font-weight: bold;
-        }
+        .tableHead {
+            border-radius: 10px;
 
-        tr td {
-            padding: 20px 10px;
-            border-bottom: 1px solid rgb(155, 155, 155);
-            font-size: 15px;
+            th {
+                padding: 16px;
+                text-align: center;
+                background-color: gold;
+                color: black;
+                font-weight: bold;
 
-            &:first-child {
-                display: flex;
-                gap: 10px;
-                align-items: center;
 
-                div {
+                &:first-child {
+                    padding-left: 30px;
                     display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-
-                    span {
-                        &:first-child {
-                            font-size: 18px;
-                            text-transform: uppercase;
-                        }
-
-                        &:nth-child(2) {
-                            font-size: 12px;
-                            opacity: 60%;
-                        }
-
-                    }
+                    align-self: flex-start;
                 }
-
             }
         }
 
-        img {
-            width: 50px;
+        tr {
+            cursor: pointer;
+
+            &:hover {
+                background-color: black;
+            }
+
+            td {
+                padding: 20px 10px;
+                border-bottom: 1px solid rgb(87 82 82);
+                font-size: 15px;
+                text-align: center;
+
+                &:first-child {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        span {
+                            &:first-child {
+                                font-size: 18px;
+                                text-transform: uppercase;
+                            }
+
+                            &:nth-child(2) {
+                                font-size: 12px;
+                                opacity: 60%;
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+            img {
+                width: 50px;
+            }
+
+        }
+    }
+
+    .tablefooter {
+        display: flex;
+        color: gold;
+        gap: 10px;
+        align-items: center;
+        padding-bottom: 20px;
+
+        &>* {
+            cursor: pointer;
+        }
+
+        &>:nth-child(7) {
+            letter-spacing: 2px;
+            cursor: default;
+            margin-bottom: 5px;
+        }
+
+        div {
+            height: 20px;
+            width: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            text-align: center;
+
+            &:hover {
+
+                background-color: rgb(80, 80, 80);
+            }
         }
 
     }
+}
+
+@media(max-width:570px) {
+    .cryptoTableSection {
+        h2 {
+            font-size: 20px;
+        }
+
+        .searchinput {
+            font-size: 14px;
+        }
+
+        .currencyTable {
+            .tableHead {
+                th {
+                    padding: 5px;
+                    font-size: 12px;
+                    height: 40px;
+
+                    &:first-child {
+                        display: revert;
+                        padding: 0;
+                    }
+                }
+            }
+
+            tr {
+                td {
+                    padding: 20px 5px;
+                    font-size: 12px;
+
+                    &:first-child {
+                        margin: 0;
+                        gap: 5px;
+
+                        div {
+                            span {
+                                &:first-child {
+                                    font-size: 14px;
+                                }
+
+                                &:nth-child(2) {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                img {
+                    width: 25px;
+                }
+            }
+        }
+
+        .tablefooter {
+            gap: 7px;
+        }
+    }
+
 }

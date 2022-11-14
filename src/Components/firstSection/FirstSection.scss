@@ -1,6 +1,6 @@
 @keyframes infite {
     to {
-        transform: translateX(-1800%);
+        transform: translateX(-700%);
     }
 }
 
@@ -42,14 +42,19 @@
             width: 20%;
             align-items: center;
             flex-shrink: 0;
-            animation: infite 20s infinite linear alternate;
+            animation: infite 10s infinite linear  both;
 
             li {
-                font-size: 15px;
+                font-size: 14px;
 
                 &:nth-child(2) {
                     display: flex;
                     gap: 5px;
+                    
+                }
+                &:last-child {
+                    font-weight: bold;
+                    font-size: 17px;
                 }
             }
 
@@ -65,22 +70,27 @@
 @media(max-width:500px) {
     .firstSection {
         .firstSectionHeader {
+            padding: 30px 0 ;
             h1 {
-                font-size: 40px;
+                font-size: 38px;
             }
 
         }
 
         .currencyData {
             ul {
-                width: 120px;
+                width: 100px;
+
+                img {
+                    width: 50px;
+                }
             }
         }
     }
 
     @keyframes infite {
         to {
-            transform: translateX(-2000%);
+            transform: translateX(-1000%);
         }
     }
 
