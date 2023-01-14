@@ -24,5 +24,6 @@ a website that tracks cryptocurrency prices , where users can watch for any chan
 * Step-by-step bullets
 ```
 
-## Author Ahmed Mahmoud  (https:www.linkedin.com/in/ahmed-mahmoud-66131225a)
+### Author
+Ahmed Mahmoud  (https:www.linkedin.com/in/ahmed-mahmoud-66131225a)
 
