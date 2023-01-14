@@ -6,11 +6,11 @@ Online cryptocurrency prices tracker.
 
 a website that tracks cryptocurrency prices , where users can watch for any changes of cryptocurrency prices , it's 24-hour change and market cap and users can see the fluctuation of the cryptocurrency prices within 24-hour , 30 days and 3 months displayed by charts. in-depth paragraph about your project and overview of use.
 
-### Demo
+## Demo
 [https://crpto-tracker.netlify.app/](https://crpto-tracker.netlify.app/)
 
 
-### Built with
+## Built with
 
 - ReactJS
 - javaScript
